@@ -17,7 +17,8 @@ import Nav from './components/Nav';
 import { Provider } from 'react-redux';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-import store from './utils/store';
+import configureStore from './utils/store';
+import store from configureStore;
 
 const httpLink = createHttpLink({
   uri: '/graphql',
