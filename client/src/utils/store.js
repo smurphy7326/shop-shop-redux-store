@@ -1,6 +1,16 @@
-import { createStore } from 'redux';
+import {createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import { reducer } from './reducers';
 
-const store = createStore(reducer);
+const rootReducer = combineReducers({
+    shop: reducer
+});
 
-export default store; 
+const configureStore = () => {
+    return createStore(
+        rootReducer,
+        compose(applyMiddleware)
+    );
+};
+
+
+export default configureStore;
