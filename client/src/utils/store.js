@@ -1,4 +1,5 @@
 import {createStore, compose, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
 import { reducer } from './reducers';
 
 const rootReducer = combineReducers({
@@ -8,7 +9,7 @@ const rootReducer = combineReducers({
 const configureStore = () => {
     return createStore(
         rootReducer,
-        compose(applyMiddleware)
+        compose(applyMiddleware(thunk))
     );
 };
 
