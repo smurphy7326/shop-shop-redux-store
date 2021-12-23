@@ -9,12 +9,13 @@ import spinner from '../../assets/spinner.gif';
 
 // AskBCS helped me with this part 
 function ProductList() {
-  const dispatch = useDispatch();
-  const state = useSelector(state => state)
-
-  const { currentCategory } = store.getState;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
+
+  // couldn't 
+  const currentCategory = useSelector((state) => state.currentCategory);
+  const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (data) {
@@ -37,10 +38,10 @@ function ProductList() {
 
   function filterProducts() {
     if (!currentCategory) {
-      return currentCategory.shop.products;
+      return products;
     }
 
-    return currentCategory.shop.products.filter(
+    return products.filter(
       (product) => product.category._id === currentCategory
     );
   }
@@ -48,7 +49,7 @@ function ProductList() {
   return (
     <div className="my-2">
       <h2>Our Products:</h2>
-      {currentCategory.shop.products.length ? (
+      {products.length ? (
         <div className="flex-row">
           {filterProducts().map((product) => (
             <ProductItem
