@@ -36,7 +36,7 @@ function ProductList() {
       });
     }
     // only dispatch that I forgot about
-  }, [data, products, dispatch ]);
+  }, [data, loading, dispatch ]);
 
   function filterProducts() {
     if (!currentCategory) {
