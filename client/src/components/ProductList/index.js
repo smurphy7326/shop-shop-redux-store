@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ProductItem from '../ProductItem';
-import configureStore from '../../utils/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
@@ -9,7 +9,8 @@ import spinner from '../../assets/spinner.gif';
 
 // AskBCS helped me with this part 
 function ProductList() {
-  const store = configureStore();
+  const dispatch = useDispatch();
+  const state = useSelector(state => state)
 
   const { currentCategory } = store.getState;
 
