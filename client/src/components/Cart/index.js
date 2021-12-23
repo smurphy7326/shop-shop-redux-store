@@ -5,15 +5,18 @@ import { QUERY_CHECKOUT } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import CartItem from '../CartItem';
 import Auth from '../../utils/auth';
-import { configureStore } from '../../utils/store';
+import configureStore from '../../utils/store';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
 
 const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
-  const [state, dispatch] = configureStore();
+  const store = configureStore();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+  const cart= store.getState();
+
 
   useEffect(() => {
     if (data) {
@@ -26,10 +29,10 @@ const Cart = () => {
   useEffect(() => {
     async function getCart() {
       const cart = await idbPromise('cart', 'get');
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      store.dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
     }
 
-    if (!state.cart.length) {
+    if (!cart.shop.cart.length) {
       getCart();
     }
   }, [state.cart.length, dispatch]);
