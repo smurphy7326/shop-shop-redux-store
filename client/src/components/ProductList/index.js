@@ -12,14 +12,15 @@ function ProductList() {
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
 
-  // couldn't 
+  // couldn't forget this, had to change current catergory
   const currentCategory = useSelector((state) => state.currentCategory);
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  console.log(products);
 
   useEffect(() => {
     if (data) {
-      store.dispatch({
+      dispatch({
         type: UPDATE_PRODUCTS,
         products: data.products,
       });
@@ -28,13 +29,14 @@ function ProductList() {
       });
     } else if (!loading) {
       idbPromise('products', 'get').then((products) => {
-        store.dispatch({
+        dispatch({
           type: UPDATE_PRODUCTS,
           products: products,
         });
       });
     }
-  }, [data, loading, store, store.dispatch]);
+    // only dispatch that I forgot about
+  }, [data, products, dispatch ]);
 
   function filterProducts() {
     if (!currentCategory) {

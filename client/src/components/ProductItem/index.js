@@ -8,7 +8,7 @@ import { idbPromise } from "../../utils/helpers";
 function ProductItem(item) {
   // thats why this was here earlier const [state, dispatch]
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  const cart = useSelector((state) => state.cart);
 
   const {
     image,
