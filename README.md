@@ -4,7 +4,7 @@
 
 This project is an e-commerce application that instead of using REACT, it is using redux for the state management. The application was built using REACT, but the instead of using REACT global state, to was changed to a redux state. It is a refactoring of an e-commerce website. 
 
-To use this application, you just have to click on the link [here](https://git.heroku.com/week-22-shop-shop-redux-store.git).
+To use this application, you just have to click on the link [here](https://week-22-shop-shop-redux-store.herokuapp.com/).
 
 Screenshot of the deployed application
 
@@ -21,7 +21,7 @@ Screenshot of the deployed application
 ## Installation 
 
 For this application there is no need to install it! All you have to do, if you want to check out the project is to click the link next to these words! 
-[CLICK HERE](https://git.heroku.com/week-22-shop-shop-redux-store.git)!!!
+[CLICK HERE](https://week-22-shop-shop-redux-store.herokuapp.com/)!!!
 
 ## Usage
 
