@@ -20,7 +20,8 @@ Screenshot of the deployed application
 
 ## Installation 
 
-For this application there is no need to install it! All you have to do, if you want to check out the project is to click the link next to these words!  https://git.heroku.com/week-22-shop-shop-redux-store.git
+For this application there is no need to install it! All you have to do, if you want to check out the project is to click the link next to these words! 
+[CLICK HERE](https://git.heroku.com/week-22-shop-shop-redux-store.git)!!!
 
 ## Usage
 
