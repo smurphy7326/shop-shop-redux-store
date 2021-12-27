@@ -12,11 +12,11 @@ Screenshot of the deployed application
 
 ## Table of Contents 
 
-* [Installation]
-* [Usage]
-* [Technologies]
-* [License]
-* [Credit]
+* [Installation](#installation)
+* [Usage](#usage)
+* [Technologies](#technologies)
+* [License](#license)
+* [Credit](#credit)
 
 ## Installation 
 
